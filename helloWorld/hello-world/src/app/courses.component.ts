@@ -26,7 +26,7 @@ export class CourseComponent{
    getTitle(){  // method: getTitle()
       return this.title;
    };
-   courses; // property: courses
+   courses; // property: courses that will assign all the data from service.getCourse()
    // by using constructor to get access from "service.getCourse data"
    // usually by using consturctor to get http endpoint data and assigned it to courses
 
