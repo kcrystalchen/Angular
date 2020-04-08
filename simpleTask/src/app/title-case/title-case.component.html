@@ -1,0 +1,49 @@
+<!-- <p>title-case works!</p>
+<p>titleCaseForm works!</p> -->
+
+<div class="container">
+    <h1>Hero Form from Title-case</h1>
+
+    <!-- The NgForm directive supplements the form element with additional features.  -->
+    <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
+<!-- Options: using diagnostic to test the input data from the user, it requires to remove the <form> attribute -->
+ <!-- {{diagnostic}}  -->
+<!-- The diagnostic near the top of the form confirms that all of your changes are reflected in the model. -->
+
+      <div class="form-group">
+        <label for="name"> Name </label>
+        <input type="text" class="form-control" id="name" required 
+        [(ngModel)]="modelDummyData.name" name="name">
+<!-- The Name <input> control has the HTML5 required attribute; the Alter Ego <input> control does not because alterEgo is optional. -->
+<!-- [(ngModel)] = "any property name in the class" two way binding -->
+      </div>
+  <br/>
+      <div class="form-group">
+        <label for="alterEgo"> Alter Ego </label>
+        <input type="text" class="form-control" id="alterEgo"
+        [(ngModel)]="modelDummyData.alterEgo" name="alterEgo">
+      </div>
+   <br/>
+      <button type="submit" class="btn btn-success"> Submit </button>
+
+    </form>
+
+    <div class="form-group">
+        <label for="power">Hero Power List</label>
+        <select class="form-control" id="power" required
+        [(ngModel)]="modelDummyData.power" name="power">
+          <option *ngFor="let pow of powersData" [value]="pow">{{pow}}</option>
+        </select>
+      </div>
+
+<br/>
+      
+<div>
+    <input type="text" [(ngModel)]="titleBinding">
+    {{titleBinding | customPipes}}
+</div>
+<br/>
+</div>
+
+<!-- Each input element has an "id property" that is used by the 'label element's' for attribute to match the label to its input control. -->
+<!-- Each input element has a "name property" that is required by 'Angular forms' to register the control with the form. -->
