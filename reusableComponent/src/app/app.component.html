@@ -1,0 +1,22 @@
+<h1>App Component Works</h1>
+<!-- To notify the user when they click the favorite component,(change) is a custom event that will notify the user when click the favorite component-->
+<favorite [is-favorite]="post.isFavorite" 
+(change)="onFavoriteChanged($event)">
+</favorite>
+<!-- $event will anything pass in the raising event-->
+
+<bootstrapPanel>
+  <div class="heading">Heading</div>
+  <div class="body">
+    <h2>body</h2>
+    <p>the content is here... </p>
+  </div>
+</bootstrapPanel>
+
+
+<heart 
+[likeCount]="tweet.likeCount" 
+[isActive]="tweet.isLike" 
+>
+
+</heart>
