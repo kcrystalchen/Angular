@@ -1,0 +1,16 @@
+<p>heart works!</p>
+
+
+<button [style.backgroundColor] = "isActive ? 'green' : 'white'" 
+(click)="onClick()"> Heart Button</button>
+
+
+<span 
+class="glyphicon glyphicon-heart"
+[class.hightlighted]="isActive"
+(click)="onClick()">
+</span>
+
+<span>
+    {{likeCount}}
+ </span>
